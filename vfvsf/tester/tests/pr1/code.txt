@@ -1,0 +1,10 @@
+k = 0;
+
+|* Outputs the same stream but with the first 2 elements removed *|
+process {
+    if(k >= 2) {
+        inject(stream[0]);
+    }
+    k++;
+}
+

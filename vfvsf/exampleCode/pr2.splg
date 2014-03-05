@@ -1,0 +1,30 @@
+function {
+    return < head[0]-head[1]*2 >;
+}
+
+----
+
+function {
+
+	my_stream = <3, 4, 5>;
+	
+	while(arg[0].has_next()) {
+		my_stream.offer(arg[0].poll() - arg[1].poll() * 2);
+	}
+	
+	return my_stream;
+}
+
+----
+
+function(system.args) {
+	return args.stream[0] + stream_arg[1] * 2;
+}
+
+--
+
+let s be a stream, then...
+
+s.poll() gets returns the head and removed it
+s.peek() returns the head without removing it
+s.offer() adds to the tail

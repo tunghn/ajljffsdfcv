@@ -1,0 +1,7 @@
+
+process {
+    x = 1;
+    y = 2;
+    inject ( stream[0] - (2*stream[1]) ); 
+}
+

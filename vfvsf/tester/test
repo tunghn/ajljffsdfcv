@@ -1,0 +1,18 @@
+correct=0
+incorrect=0
+
+for f in tests/*; do 
+echo "Running test $f"; 
+./runEXE $f/code.txt < $f/input.txt > temp.txt
+
+if diff temp.txt "$f/output.txt" >/dev/null ; then
+  correct=`expr $correct + 1`
+else
+  echo "Failed test $f"
+  read -p "Press [Enter] key to continue..."
+  incorrect=`expr $incorrect + 1`
+fi
+done
+
+echo "Correct:   " $correct
+echo "Incorrect  " $incorrect

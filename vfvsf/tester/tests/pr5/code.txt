@@ -1,0 +1,8 @@
+odd = TRUE;
+
+process {
+    if(odd) {
+        inject(stream[0]);
+    }
+    odd = !odd;
+}

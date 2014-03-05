@@ -1,0 +1,3 @@
+
+f=pr2
+./runEXE tests/$f/code.txt < tests/$f/input.txt

@@ -1,0 +1,11 @@
+x = 0;
+
+|* Merges any number of streams! *|
+process { 
+    i = 0;
+    while( i < (COUNT) ) {
+        inject( stream[i] );
+        i++;
+    }
+}
+

@@ -1,0 +1,21 @@
+process {
+    if(k < 2) {
+        return <>; //Empty stream
+    } else {
+        return <stream[0]>;
+    }
+}
+
+----
+
+function {
+
+	if(k < 2) {
+		return <>; // empty stream
+	} else {
+		stream[0].poll();
+		stream[0].poll();
+		
+		return stream[0];
+	}
+}
